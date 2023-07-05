@@ -1,0 +1,746 @@
+<!Doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="https://getbootstrap.com/docs/4.3/getting-started/download/">
+	<link rel="stylesheet" type="text/css" href="grid/simple-grid.min.css">
+	<link rel="stylesheet" type="text/css" href="fontawesome-free-5.15.4-web/css/fontawesome.min">
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	<script type="text/javascript" src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+	<style type="text/css">
+		@import url('https: //fonts.googleapis.com/css2?familt=Quicksand: wght@300;400;500;600;700;&display=swap');
+		:root{
+			--white-light: rgba(255,255,255,0.5);
+			--alice-blue:  #f8f9fa;
+			--carribean-green: #40c9a2;
+			--gray: #ededed;
+		}
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+		body{
+			font-family: 'Quicksand', sans-serif;
+		}
+		#nav-bar{
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			font-family: Roboto Slab;
+			background-color: #23232e;
+			height: 8vh;
+			position: fixed;
+			overflow: hidden;
+			width: 100%;
+      		box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+			
+		}
+		ul{
+			list-style-type: none;
+			display: flex;
+		}
+		li{
+			letter-spacing: 3px;
+			margin-left: 32px;
+		}
+		li a{
+			text-decoration: none;
+			color: whitesmoke;
+		}
+		#email{
+			border-radius: 2px;
+			border: none;
+		}
+		#submit{
+			background: lightblue;
+			border-radius: 2px;
+			border: none;
+			transition: all 0.6s ease;
+			padding-right: 4px;
+			padding-left: 4px;
+		}
+		#submit:hover{
+			background: blueviolet;
+			cursor: pointer;
+		}
+
+		img{
+			width: 100%;
+			display: block;
+		}
+		.logo{
+			color: whitesmoke;
+			text-decoration: none;
+			width: 10%;
+		}
+		.container{
+			width: 88vw;
+			margin: 0 auto;
+		}
+		
+		.lg-title,.md-title,.sm-title{
+			font-family: 'Roboto', sans-serif;
+			padding: 0.6rem 0;
+			text-transform: capitalize;
+		}
+		.lg-title{
+			font-size: 2rem;
+			font-family: 'Roboto',sans-serif;
+			text-align: center;
+			padding: 1.3rem 0;
+			/*opacity: 0.9;*/
+		}
+		.md-title{
+			font-size: 2rem;
+			font-family: 'Roboto', sans-serif;
+		}
+		.sm-title{
+			font-weight: 300;
+			font-size: 1rem;
+			text-transform: uppercase;
+		}
+		.text-light{
+			font-size: 1rem;
+			font-weight: 600;
+			line-height: 1.5;
+			/*opacity: 0.5;*/
+			margin: 0.4rem 0;
+		}
+		.products{
+			background: aliceblue;
+			padding: 3.2rem 0;
+		}
+		.products .text-light{
+			text-align: center;
+			width: 70%;
+			margin: 0.9rem auto;
+		}
+		.product{
+			margin: 2rem;
+			position: relative;
+		}
+		.product-content{
+			background: rgb(114,158,142);
+			padding: 3rem 0.5rem 2rem 0.5rem;
+			cursor: pointer;
+		}
+		.product-img{
+			background: whitesmoke;
+			box-shadow:  0 0 20px 10px white;
+			width: 200px;
+			height: 200px;
+			margin: 0 auto;
+			border-radius: 50%;
+			transition: background 0.5s ease;
+		}
+		.product-btns{
+			display: flex;
+			justify-content: center;
+			margin-top: 1.4rem;
+			opacity: 0;
+			transition: opacity 0.6s ease;
+		}
+		.btn-cart, .btn-buy{
+			background: transparent;
+			border: 1px solid black;
+			padding: 0.8rem 0;
+			width: 125px;
+			font-family: inherit;
+			text-transform: uppercase;
+			cursor: pointer;
+			border: none;
+			transition: all 0.6s ease;
+		}
+		.btn-cart{
+			background: black;
+			color: white;
+		}
+		.btn-cart:hover{
+			background: darkgreen;
+		}
+		.btn-buy{
+			background: white;
+		}
+		.btn-buy:hover{
+			background: darkgreen;
+			color: #fff;
+		}
+		.product-info{
+			background: white;
+			padding: 2rem;
+		}
+		.product-info-top{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		/*Estrelas*/
+		#star-5-1 i{
+			color: darkgray;
+		}
+		#star-5-2 i{
+			color: darkgray;
+		}
+		#star-4-2 i{
+			color: darkgray;
+		}
+		#star-5-3 i {
+			color: darkgray;
+		}
+		#star-4-3 i{
+			color: darkgray;
+		}
+		#star-3-3 i {
+			color: darkgray;
+		}
+		#star-5-5 i{
+			color: darkgray;
+		}
+		#star-4-5 i{
+			color: darkgray;
+		}
+		#star-3-3 i{
+			color: darkgray;
+		}
+		#star-5-7 i{
+			color: darkgray;
+		}
+		#star-4-7 i{
+			color: darkgray;
+		}
+		#star-3-7 i{
+			color: darkgray;
+		}
+		#star-2-7 i{
+			color: darkgray;
+		}
+
+		.rating span i{ 
+			color: yellow;
+		}
+
+		.product-name{
+			color: black;
+			display: black;
+			text-decoration: none;
+			font-size: 1rem;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		.product-name:hover{
+			color: rgb(114,158,142);
+		}
+		.product-price{
+			padding-top: 0.6rem;
+			padding-right: 0.6rem;
+			display: inline-block;
+		}
+		.product-price:first-of-type{
+			text-decoration: line-through;
+			color: darkgreen;
+		}
+		.product-img img{
+			transition: transform 0.6s ease;
+		}
+		.product:hover .product-img img{
+			transform: scale(1.1);
+		}
+		.product:hover .product-img{
+			background: darkgreen;
+		}
+		.product:hover .product-btns{
+			opacity: 1;
+		}
+		.off-info .sm-title{
+			background: darkgreen;
+			color: whitesmoke;
+			display: inline-block;
+			padding: 0.5rem;
+			position: absolute;
+			top: 0;
+			left: 0;
+			writing-mode: vertical-lr;
+			transform: rotate(180deg);
+			z-index: 1;
+			letter-spacing: 3px;
+			cursor: pointer;
+		}
+
+		.product-collection{
+			padding: 3.2rem 0;
+		}
+		.product-collection-wrapper{
+			padding: 3.2rem 0;
+		}
+		.product-col-left-flex{
+			background: linear-gradient(rgba(0,0,0,0),rgba(0, 0, 0, 0.3)), url("./images/fashion-img-1.jpg") center/cover no-repeat;
+		}
+		.product-col-r-top{
+			background: linear-gradient(rgba(0,0,0,0),rgba(0, 0, 0, 0.3)), url("./images/fashion-img-2.png") center/cover no-repeat;
+		}
+		.flex{
+			display: flex;
+			justify-content: center;
+			align-items: flex-end;
+			height: 50vh;
+			padding: 2rem 1.5rem 3.2rem;
+			margin: 5px;
+		}
+		.product-col-r-bottom > div:first-child{
+			background: #eaa001;
+		}
+		.product-col-r-bottom > div:last-child{
+			background: #0090ff;
+		}
+		.product-col-content{
+			text-align: center;
+			color: white;
+		}
+		.product-collection .text-light{
+			opacity: 1;
+			font-size: 0.8;
+			font-weight: 400;
+			line-height: 1.7;
+		}
+		.btn-dark{
+			background: black;
+			color: white;
+			outline: 0;
+			border-radius: 25px;
+			padding: 0.7rem 1rem;
+			border: 0;
+			margin-top: 1rem;
+			cursor: pointer;
+			transition: all 0.6s ease;
+			font-size: 1rem;
+			font-family: inherit;
+
+		}
+		.btn-dark:hover{
+			background: darkgreen;
+		}
+		#video{
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
+			width: 100%;
+			margin-top: 10px;
+		}
+		footer{
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			font-family: Roboto Slab;
+			background-color: #23232e;
+			height: 6vh;
+			overflow: hidden;
+			width: 100%;
+      		box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+		}
+		#whatsapp{
+			width: 2%;
+			margin:0 10px;
+		}
+		#facebook{
+			width: 2%;
+			margin:0 10px;
+		}
+		#email-logo{
+			width:2%;
+			margin:0 10px;
+		}
+
+		@media screen and (min-width: 992px){
+			.product-items{
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+			}
+			.product-col-r-bottom{
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+		@media screen and(min-width: 1200px){
+			.product-items{
+				grid-template-columns: repeat(3, 1fr);
+			}
+			.product{
+				margin-left: 1rem;
+				margin-right: 1rem;
+			}
+			.products .text-light{
+				width: 50%;
+			}
+		}
+		@media screen 
+	</style>
+	<title>Product Landing</title>
+</head>
+<body>
+	<main>
+		<header>
+			<nav id="nav-bar">
+					<a href="#" class="logo"><img src="https://logodownload.org/wp-content/uploads/2021/08/t-rowe-price-logo.png"></a>
+					<ul>
+						<li><input type="text" name="email" id="email" placeholder="Coloque seu email"> <!--<a href="#">Conta</a>--></li>
+						<li><input type="submit" name="submit" id="submit" value="Cadastrar-se"></li>
+						<li><a href="#cadastro">Conta</li>
+						<li><a href="#">Sobre</a></li>
+					</ul>
+				</nav>
+		</header>
+		<div class="products">
+			<div class="container">
+				<h1 class="lg-title">Calçados Especiais com Ofertas</h1>
+				<p class="text-light">Encontre aqui os melhores calçados e acessórios</p>
+
+				<div class="product-items">
+					<!--um produto-->
+					<div class="Product">
+						<div class="product-content">
+							<div class="product-img">
+								<img src="./images/shoe-1.png" alt="product image">
+							</div>
+							<div class="product-btns">
+								<button type="button" class="btn-cart">Add To Cart<span><i class="fas fa-plus"></i></span>
+								</button>
+								<button type="button" class="btn-buy"> Compre agora<span><i class="fas fa-shopping-cart"></i></span>
+								</button>
+							</div>
+						</div>
+					
+						<div class="Product-info">
+							<div class="product-info-top">
+								<h2 class="sm-title">Estilo de vida</h2>
+								<div class="rating">
+									<span class="star-1" id="star-1-1"><i class="fas fa-star"></i></span>
+									<span class="star-2" id="star-2-1"><i class="fas fa-star"></i></span>
+									<span class="star-3" id="star-3-1"><i class="fas fa-star"></i></span>
+									<span class="star-4" id="star-4-1"><i class="fas fa-star"></i></span>
+									<span class="star-5" id="star-5-1"><i class="fas fa-star"></i></span>
+								</div>
+								
+							</div>
+							<a href="#" class="product-name">Vans Off The Wall midle boot</a><br>
+							<p class="product-price">1500 MZN</p>
+							<p class="product-price">1200 MZN</p>
+						</div>
+						<div class="off-info">
+							<h2 class="sm-tittle">50% Desconto</h2>
+						</div>
+					</div>
+					<!-- fim de um unico produto-->
+					<!-- inicio do primeiro produto-->
+					<div class="Product">
+						<div class="product-content">
+							<div class="product-img">
+								<img src="./images/shoe-2.png" alt="product image">
+							</div>
+							<div class="product-btns">
+								<button type="button" class="btn-cart">Add To Cart<span><i class="fas fa-plus"></i></span>
+								</button>
+								<button type="button" class="btn-buy"> buy now<span><i class="fas fa-shopping-cart"></i></span>
+								</button>
+							</div>
+						</div>
+					
+						<div class="Product-info">
+							<div class="product-info-top">
+								<h2 class="sm-title">Estilo de vida</h2>
+								<div class="rating">
+									<span class="star-1" id="star-1-2"><i class="fas fa-star"></i></span>
+									<span class="star-2" id="star-2-2"><i class="fas fa-star"></i></span>
+									<span class="star-3" id="star-3-2"><i class="fas fa-star"></i></span>
+									<span class="star-4" id="star-4-2"><i class="fas fa-star"></i></span>
+									<span class="star-5" id="star-5-2"><i class="fas fa-star"></i></span>
+								</div>
+								
+							</div>
+							<a href="#" class="product-name">Vans OFF THE WALL Skateboard </a><br>
+							<p class="product-price">1500 MZN</p>
+							<p class="product-price">1200 MZN</p>
+						</div>
+						<div class="off-info">
+							<h2 class="sm-tittle">10% Desconto</h2>
+						</div>
+					</div>
+					<!--fim de um produto-->
+					<!-- inicio de um novo produto-->
+					<div class="Product">
+						<div class="product-content">
+							<div class="product-img">
+								<img src="./images/shoe-3.png" alt="product image">
+							</div>
+							<div class="product-btns">
+								<button type="button" class="btn-cart">Add To Cart<span><i class="fas fa-plus"></i></span>
+								</button>
+								<button type="button" class="btn-buy"> buy now<span><i class="fas fa-shopping-cart"></i></span>
+								</button>
+							</div>
+						</div>
+					
+						<div class="Product-info">
+							<div class="product-info-top">
+								<h2 class="sm-title">Estilo de vida</h2>
+								<div class="rating">
+									<span class="star-1" id="star-1-3"><i class="fas fa-star"></i></span>
+									<span class="star-2" id="star-2-3"><i class="fas fa-star"></i></span>
+									<span class="star-3" id="star-3-3"><i class="fas fa-star"></i></span>
+									<span class="star-4" id="star-4-3"><i class="fas fa-star"></i></span>
+									<span class="star-5" id="star-5-3"><i class="fas fa-star"></i></span>
+								</div>
+								
+							</div>
+							<a href="#" class="product-name">Running Shoes, NEW</a><br>
+							<p class="product-price">1150 MZN</p>
+							<p class="product-price">860 MZN</p>
+						</div>
+						<div class="off-info">
+							<h2 class="sm-tittle">25% Desconto</h2>
+						</div>
+					</div>
+					<!--fim de um product-->
+					<!-- inicio de um novo produto-->
+					<div class="Product">
+						<div class="product-content">
+							<div class="product-img">
+								<img src="./images/shoe-4.png" alt="product image">
+							</div>
+							<div class="product-btns">
+								<button type="button" class="btn-cart">Add To Cart<span><i class="fas fa-plus"></i></span>
+								</button>
+								<button type="button" class="btn-buy"> buy now<span><i class="fas fa-shopping-cart"></i></span>
+								</button>
+							</div>
+						</div>
+					
+						<div class="Product-info">
+							<div class="product-info-top">
+								<h2 class="sm-title">Estilo de vida</h2>
+								<div class="rating">
+									<span class="star-1" id="star-1-4"><i class="fas fa-star"></i></span>
+									<span class="star-2" id="star-2-4"><i class="fas fa-star"></i></span>
+									<span class="star-3" id="star-3-4"><i class="fas fa-star"></i></span>
+									<span class="star-4" id="star-4-4"><i class="fas fa-star"></i></span>
+									<span class="star-5" id="star-5-4"><i class="fas fa-star"></i></span>
+								</div>
+								
+							</div>
+							<a href="#" class="product-name">Vans OFF THE WALL Classic</a><br>
+							<p class="product-price">1500 MZN</p>
+							<p class="product-price">375 MZN</p>
+						</div>
+						<div class="off-info">
+							<h2 class="sm-tittle">75% Desconto</h2>
+						</div>
+					</div>
+					<!-- fim de um produto-->
+					<!--inicio de um novo produto-->
+					<div class="Product">
+						<div class="product-content">
+							<div class="product-img">
+								<img src="./images/shoe-5.png" alt="product image">
+							</div>
+							<div class="product-btns">
+								<button type="button" class="btn-cart">Add To Cart<span><i class="fas fa-plus"></i></span>
+								</button>
+								<button type="button" class="btn-buy">Compre agora<span><i class="fas fa-shopping-cart"></i></span>
+								</button>
+							</div>
+						</div>
+					
+						<div class="Product-info">
+							<div class="product-info-top">
+								<h2 class="sm-title">Estilo de vida</h2>
+								<div class="rating">
+									<span class="star-1" id="star-1-5"><i class="fas fa-star"></i></span>
+									<span class="star-2" id="star-2-5"><i class="fas fa-star"></i></span>
+									<span class="star-3" id="star-3-5"><i class="fas fa-star"></i></span>
+									<span class="star-4" id="star-4-5"><i class="fas fa-star"></i></span>
+									<span class="star-5" id="star-5-5"><i class="fas fa-star"></i></span>
+								</div>
+								
+							</div>
+							<a href="#" class="product-name">Black 'nd White Vans</a><br>
+							<p class="product-price">1500 MZN</p>
+							<p class="product-price">1350 MZN</p>
+						</div>
+						<div class="off-info">
+							<h2 class="sm-tittle">10% Desconto</h2>
+						</div>
+					</div>
+					<!--fim de um produto-->
+					<div class="Product">
+						<div class="product-content">
+							<div class="product-img">
+								<img src="./images/shoe-6.png" alt="product image">
+							</div>
+							<div class="product-btns">
+								<button type="button" class="btn-cart">Add To Cart<span><i class="fas fa-plus"></i></span>
+								</button>
+								<button type="button" class="btn-buy"> buy now<span><i class="fas fa-shopping-cart"></i></span>
+								</button>
+							</div>
+						</div>
+					
+						<div class="Product-info">
+							<div class="product-info-top">
+								<h2 class="sm-title">Estilo de vida</h2>
+								<div class="rating">
+									<span class="star-1" id="star-1-6"><i class="fas fa-star"></i></span>
+									<span class="star-2" id="star-2-6"><i class="fas fa-star"></i></span>
+									<span class="star-3" id="star-3-6"><i class="fas fa-star"></i></span>
+									<span class="star-4" id="star-4-6"><i class="fas fa-star"></i></span>
+									<span class="star-5" id="star-5-6"><i class="fas fa-star"></i></span>
+								</div>
+								
+							</div>
+							<a href="#" class="product-name">Blue Shoes women</a><br>
+							<p class="product-price">1500 MZN</p>
+							<p class="product-price">1125 MZN</p>
+						</div>
+						<div class="off-info">
+							<h2 class="sm-tittle">25% Desconto</h2>
+						</div>
+					</div>
+					<!--fim de um produto-->
+					<!-- inicio de um novo produto-->
+					<div class="Product">
+						<div class="product-content">
+							<div class="product-img">
+								<img src="./images/shoe-7.png" alt="product image">
+							</div>
+							<div class="product-btns">
+								<button type="button" class="btn-cart">Add To Cart<span><i class="fas fa-plus"></i></span>
+								</button>
+								<button type="button" class="btn-buy"> buy now<span><i class="fas fa-shopping-cart"></i></span>
+								</button>
+							</div>
+						</div>
+					
+						<div class="Product-info">
+							<div class="product-info-top">
+								<h2 class="sm-title">Estilo de vida</h2>
+								<div class="rating">
+									<span class="star-1" id="star-1-7"><i class="fas fa-star"></i></span>
+									<span class="star-2" id="star-2-7"><i class="fas fa-star"></i></span>
+									<span class="star-3" id="star-3-7"><i class="fas fa-star"></i></span>
+									<span class="star-4" id="star-4-7"><i class="fas fa-star"></i></span>
+									<span class="star-5" id="star-5-7"><i class="fas fa-star"></i></span>
+								</div>
+								
+							</div>
+							<a href="#" class="product-name">Pink Women shoes</a><br>
+							<p class="product-price">2600 MZN</p>
+							<p class="product-price">1950 MZN</p>
+						</div>
+						<div class="off-info">
+							<h2 class="sm-tittle">25% Desconto</h2>
+						</div>
+					</div>
+					<!--fim de um produto-->
+					<!-- inicio de um novo produto-->
+					<div class="Product">
+						<div class="product-content">
+							<div class="product-img">
+								<img src="./images/shoe-8.png" alt="product image">
+							</div>
+							<div class="product-btns">
+								<button type="button" class="btn-cart">Add To Cart<span><i class="fas fa-plus"></i></span>
+								</button>
+								<button type="button" class="btn-buy"> buy now<span><i class="fas fa-shopping-cart"></i></span>
+								</button>
+							</div>
+						</div>
+					
+						<div class="Product-info">
+							<div class="product-info-top">
+								<h2 class="sm-title">Estilo de vida</h2>
+								<div class="rating">
+									<span class="star-1" id="star-1-8"><i class="fas fa-star"></i></span>
+									<span class="star-2" id="star-2-8"><i class="fas fa-star"></i></span>
+									<span class="star-3" id="star-3-8"><i class="fas fa-star"></i></span>
+									<span class="star-4" id="star-4-8"><i class="fas fa-star"></i></span>
+									<span class="star-5" id="star-5-8"><i class="fas fa-star"></i></span>
+								</div>
+								
+							</div>
+							<a href="#" class="product-name">Black Women Boot</a><br>
+							<p class="product-price">4200 MZN</p>
+							<p class="product-price">3150 MZN</p>
+						</div>
+						<div class="off-info">
+							<h2 class="sm-tittle">25% Desconto</h2>
+						</div>
+					</div>
+					<!--fim de um produto-->
+				</div>
+			</div>
+		</div>
+		<div class="product-collection">
+			<div class="container">
+				<div class="product-collection-wraper">
+					<!--product col left-->
+					<div class="product-col-left-flex">
+						<div class="product-col-content">
+							<h2 class="sm-title">Calçados Masculino</h2>
+							<h2 class="md-title"> Coleção Masculina</h2>
+							<p class="text-light">Coleção Inverno e Verão</p>
+							<button type="button" class="btn-dark">Compre agora</button>
+						</div>
+					</div>
+					
+					<!-- product col right-->
+					<div class="product-col-right">
+						<div class="product-col-r-top flex">
+							<div class="product-col-content">
+								<h2 class="sm-title">Sapato Feminino</h2>
+								<h2 class="md-title"> Coleção Feminina</h2>
+								<p class="text-light">Desde todo tipo de sapatos</p>
+								<button type="button" class="btn-dark">Compre agora</button>
+							</div>
+						</div>
+						<div class="product-col-r-bottom">
+							<!--left-->
+							<div class="flex">
+								<div class="product-col-content">
+									<h2 class="sm-title">Vendas de verão</h2>
+									<h2 class="md-title"> Desconto de 50%</h2>
+									<p class="text-light">Fique a par das maiores tendências de verão </p>
+									<button type="button" class="btn-dark">Compre agora</button>
+									
+								</div>
+								
+							</div>
+							<!--right-->
+							<div class="flex">
+								<div class="product-col-content">
+									<h2 class="sm-title">Sapatilhas</h2>
+									<h2 class="md-title">Mais vendidos</h2>
+									<p class="text-light">Encontre aqui as tuas marcas favoritas </p>
+									<button type="button" class="btn-dark">Compre agora</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="video">
+					<iframe width="960" height="506" src="https://www.youtube.com/embed/EcqHebKgpI8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div id="facebook">
+				<a href="https://www.facebook.com/denio.boa" class="contas" target="_blank"><img src="https://image.flaticon.com/icons/png/512/1384/1384069.png"/></a>
+			</div>
+			<div id="email-logo">
+				<a href="denioboa25@gmail.com" class="contas" target="_blank"><img src="https://image.flaticon.com/icons/png/512/5480/5480423.png"></a>
+			</div>
+			<div id="whatsapp">
+				<a href="#"><img src="https://image.flaticon.com/icons/png/512/1384/1384079.png"></a>
+			</div>
+		</footer>
+	</body>
+</html>
